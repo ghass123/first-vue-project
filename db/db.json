@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": "28ab",
+      "email": "bhjsbilel@gmail.com",
+      "password": "123",
+      "name": "bilel"
+    },
+    {
+      "id": "6203",
+      "email": "ghassenchaari55@gmail.com",
+      "password": "123",
+      "name": "ghassen"
+    },
+    {
+      "id": "931d",
+      "email": "affes",
+      "password": "azerty",
+      "name": "dali"
+    },
+    {
+      "id": "9058",
+      "email": "affes",
+      "password": "azerty"
+    }
+  ],
+  "restaurant": [
+    {
+      "name": "FarmSlice",
+      "localisation": "kaid mohamed 3klm",
+      "contact": "96256788",
+      "id": "2dce"
+    },
+    {
+      "id": "93a4",
+      "name": "sishbish",
+      "localisation": "trik tunis 1.5klm",
+      "contact": "45877632"
+    },
+    {
+      "id": "a6f7",
+      "name": "tonton",
+      "localisation": "nasriya",
+      "contact": "56478951"
+    },
+    {
+      "id": "c2eb",
+      "name": "hsouna",
+      "localisation": "hay l ons",
+      "contact": "96256788"
+    }
+  ]
+}
