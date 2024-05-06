@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     async deleteRestaurant(id) {
-      let result = await axios.delete("https://first-vue-project.pages.dev/restaurant/" + id);
+      let result = await axios.delete("http://localhost:3000/restaurant/" + id);
       console.warn(result)
       if (result.status == 200) {
         this.loadData()
@@ -65,7 +65,7 @@ export default {
       }
       this.name = JSON.parse(user).name;
 
-      let result = await axios.get("https://first-vue-project.pages.dev/restaurant");
+      let result = await axios.get("http://localhost:3000/restaurant");
       console.warn(result);
       this.restaurant = result.data;
     }
