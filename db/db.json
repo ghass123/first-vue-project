@@ -30,11 +30,6 @@
       "name": "fouzia"
     },
     {
-      "id": "122c",
-      "password": "",
-      "name": ""
-    },
-    {
       "id": "a1e0",
       "email": "dali@gmail.com",
       "password": "1234",
@@ -45,6 +40,24 @@
       "email": "gh",
       "password": "gh",
       "name": "gh"
+    },
+    {
+      "id": "eab6",
+      "email": "h",
+      "password": "h",
+      "name": "h"
+    },
+    {
+      "id": "0242",
+      "email": "dj",
+      "password": "dj",
+      "name": "dj"
+    },
+    {
+      "id": "7f59",
+      "email": "rania12@gmail.com",
+      "password": "rania21",
+      "name": "rania"
     }
   ],
   "restaurant": [
