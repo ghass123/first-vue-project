@@ -34,7 +34,7 @@
     methods:{
     async SignUp(){
     
-        let result=await axios.post("http://localhost:3000/users",{
+        let result=await axios.post("https://first-vue-project.pages.dev/users",{
     email:this.email,
     password:this.password,
     name:this.name
