@@ -23,14 +23,36 @@
       "email": "affes",
       "password": "azerty"
     },
-   
     {
       "id": "cda4",
       "email": "ghassenchaari55@gmail.com",
       "password": "abc123",
       "name": "ghassench"
+    },
+    {
+      "id": "b943",
+      "email": "ghazichaari@gmail.com",
+      "password": "ghazi21",
+      "name": "ghazi"
+    },
+    {
+      "id": "f10b",
+      "email": "dddd@gmail.com",
+      "password": "365",
+      "name": "dddd"
+    },
+    {
+      "id": "966d",
+      "email": "affessssss",
+      "password": "azertysss",
+      "name": "dddds"
+    },
+    {
+      "id": "cc2c",
+      "email": "gh",
+      "password": "gh",
+      "name": "gh"
     }
-    
   ],
   "restaurant": [
     {
@@ -58,10 +80,10 @@
       "contact": "96256788"
     },
     {
-      "id": "e871",
       "name": "haj tayeb",
-      "localisation": "kaid mohamed 3klm",
-      "contact": "96256789"
+      "localisation": "num5",
+      "contact": "45871452",
+      "id": "26be"
     }
   ]
 }
