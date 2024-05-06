@@ -31,7 +31,7 @@ export default {
             }
 
             let result = await axios.get(//asynchronous HTTP client for making HTTP requests
-                `https://jsonserver.pages.dev/users?email=${this.email}&password=${this.password}`
+                `http://localhost:3000/users?email=${this.email}&password=${this.password}`
             );
 
             if (result.status == 200 && result.data.length > 0) {

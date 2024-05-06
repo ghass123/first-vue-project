@@ -34,7 +34,7 @@
     methods:{
     async SignUp(){
     
-        let result=await axios.post("https://jsonserver.pages.dev/users",{
+        let result=await axios.post("http://localhost:3000/users",{
     email:this.email,
     password:this.password,
     name:this.name
