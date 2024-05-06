@@ -1,5 +1,5 @@
 <template>
-    <body class="home">
+  <body class="home">
     <div>
       <Header />
       <h1>Hello {{ name }}, Welcome to our HomePage</h1>
@@ -31,52 +31,52 @@
         </table>
       </div>
     </div>
-</body>
- </template>
-  
-  <script>
-  import Header from './Header.vue'
-  import axios from 'axios'
-  
-  export default {
-    name: 'HomePage',
-    data() {
-      return {
-        name: '',
-        restaurant: []
-      }
-    },
-    components: {
-      Header
-    },
-    methods: {
-      async deleteRestaurant(id) {
-        let result = await axios.delete("http://localhost:3000/restaurant/" + id);
-        console.warn(result)
-        if (result.status == 200) {
-          this.loadData()
-        }
-      },
-      async loadData() {
-        let user = localStorage.getItem('user-info');
-        this.name = JSON.parse(user).name;
-  
-        if (!user) {
-          this.$router.push({ name: 'SignUp' })
-        }
-  
-        let result = await axios.get("http://localhost:3000/restaurant");
-        console.warn(result);
-        this.restaurant = result.data;
-      }
-    },
-    async mounted() {
-      this.loadData();
+  </body>
+</template>
+
+<script>
+import Header from './Header.vue'
+import axios from 'axios'
+
+export default {
+  name: 'HomePage',
+  data() {
+    return {
+      name: '',
+      restaurant: []
     }
+  },
+  components: {
+    Header
+  },
+  methods: {
+    async deleteRestaurant(id) {
+      let result = await axios.delete("http://localhost:3000/restaurant/" + id);
+      console.warn(result)
+      if (result.status == 200) {
+        this.loadData()
+      }
+    },
+    async loadData() {
+      let user = localStorage.getItem('user-info');
+      if (!user) {
+        this.$router.push({ name: 'SignUp' })
+        return;
+      }
+      this.name = JSON.parse(user).name;
+
+      let result = await axios.get("http://localhost:3000/restaurant");
+      console.warn(result);
+      this.restaurant = result.data;
+    }
+  },
+  async mounted() {
+    await this.loadData();
   }
-  </script>
-  
-  <style>
+}
+</script>
+
+<style>
   body.home{
     margin: 0;
     padding: 0;
