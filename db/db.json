@@ -22,7 +22,15 @@
       "id": "9058",
       "email": "affes",
       "password": "azerty"
+    },
+   
+    {
+      "id": "cda4",
+      "email": "ghassenchaari55@gmail.com",
+      "password": "abc123",
+      "name": "ghassench"
     }
+    
   ],
   "restaurant": [
     {
@@ -48,6 +56,12 @@
       "name": "hsouna",
       "localisation": "hay l ons",
       "contact": "96256788"
+    },
+    {
+      "id": "e871",
+      "name": "haj tayeb",
+      "localisation": "kaid mohamed 3klm",
+      "contact": "96256789"
     }
   ]
 }
