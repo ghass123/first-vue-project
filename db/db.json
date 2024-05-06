@@ -28,6 +28,23 @@
       "email": "fouzia@gmail.com",
       "password": "123",
       "name": "fouzia"
+    },
+    {
+      "id": "122c",
+      "password": "",
+      "name": ""
+    },
+    {
+      "id": "a1e0",
+      "email": "dali@gmail.com",
+      "password": "1234",
+      "name": "dali"
+    },
+    {
+      "id": "8144",
+      "email": "gh",
+      "password": "gh",
+      "name": "gh"
     }
   ],
   "restaurant": [
