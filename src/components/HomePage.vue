@@ -61,12 +61,13 @@ export default {
       let user = localStorage.getItem('user-info');
       if (!user) {
         this.$router.push({ name: 'SignUp' })
+        
         return;
       }
       this.name = JSON.parse(user).name;
 
       let result = await axios.get("https://3ff9-197-2-24-57.ngrok-free.app/restaurant");
-      console.warn(result);
+      console.warn(result.data);
       this.restaurant = result.data;
     }
   },
