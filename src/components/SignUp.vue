@@ -1,49 +1,50 @@
-<template>
-  <div>
-    <h1>SignUp</h1>
-    
-    <div class="register"> 
-      <input type="text" v-model="name" placeholder="Enter Name"/>
-      <input type="text" v-model="email" placeholder="Enter Email"/>
-      <input type="password" v-model="password" placeholder="Enter password"/>
-      <button @click="handleSignup">Sign UP</button>
-      
-      <p>
-        <router-link to="/Login">Login</router-link>
-      </p>    
-    </div> 
-  </div>
-</template>
+// SignUp.vue
 
 <script>
-import axios from 'axios'
-
 export default {
-  name: 'SignUp',
-  data() {
-    return {
-      name: '',
-      email: '',
-      password: ''
+    name: 'SignUp',
+    data() {
+        return {
+            name: '',
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        async signUp() {
+            if (!this.isValidEmail()) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            try {
+                const response = await fetch('https://ghassen-worker.ghassenchaari55.workers.dev/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: this.name,
+                        email: this.email,
+                        password: this.password
+                    })
+                });
+
+                if (response.ok) {
+                    // Handle successful signup
+                    this.$router.push({ name: 'LoginPage' });
+                } else {
+                    console.warn("Signup failed:", response.statusText);
+                    // Handle signup failure
+                }
+            } catch (error) {
+                console.error("An error occurred during signup:", error);
+                // Handle error
+            }
+        },
+        isValidEmail() {
+            return this.email.includes('@');
+        }
     }
-  },
-  methods: {
-    async handleSignup() {
-      try {
-        const response = await axios.post('https://summer-limit-fc4f.ghassenchaari55.workers.dev/signup', {
-          email: this.email,
-          password: this.password,
-          name: this.name
-        });
-        // Handle successful signup response
-        console.log(response.data);
-        // Redirect the user to login page or homepage upon successful signup
-        this.$router.push('/Login');
-      } catch (error) {
-        // Handle signup error
-        console.error(error);
-      }
-    }
-  }
-}
+};
 </script>
