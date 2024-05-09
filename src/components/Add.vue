@@ -35,7 +35,7 @@ return {
 methods: {
    async addRestaurant(){
         console.warn(this.Restaurant);
-        const result =await axios.post("http://localhost:3000/restaurant",{
+        const result =await axios.post("https://3ff9-197-2-24-57.ngrok-free.app/restaurant",{
             name:this.Restaurant.name,
             localisation:this.Restaurant.localisation,
             contact:this.Restaurant.contact,

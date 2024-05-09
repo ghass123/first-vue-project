@@ -23,6 +23,18 @@
       "email": "ghassenchaari55@gmail.com",
       "password": "123",
       "name": "gh"
+    },
+    {
+      "id": "7056",
+      "email": "chaari.ghassen@ipsas.tn",
+      "password": "gha",
+      "name": "ghassen"
+    },
+    {
+      "id": "11b0",
+      "email": "bilel@gmail.com",
+      "password": "123",
+      "name": "bilel"
     }
   ],
   "restaurant": [
