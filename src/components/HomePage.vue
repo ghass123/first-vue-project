@@ -65,7 +65,7 @@ export default {
       }
       this.name = JSON.parse(user).name;
 
-      let result = await axios.get("https://3ff9-197-2-24-57.ngrok-free.app/restaurant");
+      let result = await axios.get("http://localhost:3000/restaurant");
       console.warn(result);
       this.restaurant = result.data;
     }
