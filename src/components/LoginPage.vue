@@ -1,53 +1,46 @@
 <template>
-    <img class="logo" src="../assets/resto.logo.jpg"/>
-    <h1>Login</h1>
-    
-    <div class="login"> 
+    <div>
+      <h1>Login</h1>
+      
+      <div class="login"> 
         <input type="text" v-model="email" placeholder="Enter Email"/>
         <input type="password" v-model="password" placeholder="Enter password"/>
-        <button v-on:click="login">Login</button>
+        <button @click="handleLogin">Login</button>
+        
         <p>
-            <router-link to='/sign-up'>SignUp</router-link>
+          <router-link to='/sign-up'>SignUp</router-link>
         </p>    
-    </div> 
-</template>
-
-<script>
-import axios from 'axios';
-
-export default {
+      </div> 
+    </div>
+  </template>
+  
+  <script>
+  import axios from 'axios';
+  
+  export default {
     name: 'LoginPage',
     data() {
-        return {
-            email: '',
-            password: ''
-        }
+      return {
+        email: '',
+        password: ''
+      }
     },
     methods: {
-        async login() {// asynchronous to handle promises and operations
-                    if (!this.email || !this.password) {
-                    alert("Please enter both email and password.");
-                    return;
-            }
-
-            let result = await axios.get(//asynchronous HTTP client for making HTTP requests
-                `http://localhost:3000/users?email=${this.email}&password=${this.password}`
-            );
-
-            if (result.status == 200 && result.data.length > 0) {
-                localStorage.setItem("user-info", JSON.stringify(result.data[0]));
-                this.$router.push({ name: 'HomePage' });//redirects the user to the homepage
-            } else {
-                console.warn(result);
-            }
+      async handleLogin() {
+        try {
+          const response = await axios.post('https://summer-limit-fc4f.ghassenchaari55.workers.dev/login', {
+            email: this.email,
+            password: this.password
+          });
+          // Handle successful login response
+          console.log(response.data);
+          // Redirect the user to homepage upon successful login
+          this.$router.push('/');
+        } catch (error) {
+          // Handle login error
+          console.error(error);
         }
-    },
-    mounted() {//ready for interaction
-        let user = localStorage.getItem('user-info');
-        if (user) {
-            console.log("hello");
-            this.$router.push({ name: 'HomePage' });
-        }
+      }
     }
-};
-</script>
+  }
+  </script>
