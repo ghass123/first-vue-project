@@ -34,7 +34,7 @@
           return;
         }
   
-        let result = await axios.post("http://localhost:3000/users", {
+        let result = await axios.post("https://worker-signup-silence-929f.ghassenchaari55.workers.dev/", {
           email: this.email,
           password: this.password,
           name: this.name
