@@ -34,7 +34,7 @@
           return;
         }
   
-        let result = await axios.post("https://3ff9-197-2-24-57.ngrok-free.app/users", {
+        let result = await axios.post("http://localhost:3000/users", {
           email: this.email,
           password: this.password,
           name: this.name

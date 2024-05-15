@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     async deleteRestaurant(id) {
-      let result = await axios.delete("https://3ff9-197-2-24-57.ngrok-free.app/restaurant/" + id);
+      let result = await axios.delete("http://localhost:3000/restaurant/" + id);
       console.warn(result)
       if (result.status == 200) {
         this.loadData()
@@ -61,13 +61,12 @@ export default {
       let user = localStorage.getItem('user-info');
       if (!user) {
         this.$router.push({ name: 'SignUp' })
-        
         return;
       }
       this.name = JSON.parse(user).name;
 
-      let result = await axios.get("https://3ff9-197-2-24-57.ngrok-free.app/restaurant");
-      console.warn(result.data);
+      let result = await axios.get("http://localhost:3000/restaurant");
+      console.warn(result);
       this.restaurant = result.data;
     }
   },

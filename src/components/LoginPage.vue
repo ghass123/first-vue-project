@@ -31,7 +31,7 @@ export default {
             }
 
             let result = await axios.get(//asynchronous HTTP client for making HTTP requests
-                `https://3ff9-197-2-24-57.ngrok-free.app/users?email=${this.email}&password=${this.password}`
+                `http://localhost:3000/users?email=${this.email}&password=${this.password}`
             );
 
             if (result.status == 200 && result.data.length > 0) {
